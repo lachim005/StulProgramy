@@ -31,8 +31,14 @@ namespace StulProgramy
         {
             InitializeComponent();
 
+            ZobrazitPorty();
+        }
+
+        private void ZobrazitPorty()
+        {
             //Přidá možnosti s porty
             porty = SerialPort.GetPortNames();
+            portyLb.Items.Clear();
             foreach (string portName in porty)
             {
                 ListBoxItem lbi = new();
@@ -40,6 +46,7 @@ namespace StulProgramy
                 lbi.MouseDoubleClick += Vybrat;
                 portyLb.Items.Add(lbi);
             }
+
         }
 
         private void Vybrat(object sender, EventArgs e)
@@ -59,6 +66,11 @@ namespace StulProgramy
                 stul = null;
             }
 
+        }
+
+        private void Obnovit(object sender, RoutedEventArgs e)
+        {
+            ZobrazitPorty();
         }
     }
 }

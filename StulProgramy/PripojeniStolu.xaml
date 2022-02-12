@@ -17,5 +17,6 @@
         <Label Content="Vyberte _port" Grid.Row="1" Target="{Binding ElementName=tst}"/>
         <ListBox Grid.Row="2" x:Name="portyLb"/>
         <Button x:Name="otestovatPripojeniBtn" IsEnabled="{Binding ElementName=portyLb, Path=SelectedItems.Count}" Click="Vybrat" Grid.Row="3" Height="40" Width="200" Content="_Vybrat" HorizontalAlignment="Right"/>
+        <Button x:Name="obnovitBtn" Click="Obnovit" Grid.Row="3" Height="40" Width="200" Content="_Obnovit" HorizontalAlignment="Left"/>
     </Grid>
 </UserControl>
