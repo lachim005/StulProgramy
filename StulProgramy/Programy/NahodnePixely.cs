@@ -8,7 +8,7 @@ using System.Windows.Controls;
 
 namespace StulProgramy.Programy
 {
-    internal class NahodnePixely : IProgram
+    public class NahodnePixely : IProgram
     {
         public UserControl Zobrazeni { get; set; }
         public Stul Stul { get; set; }
@@ -26,7 +26,7 @@ namespace StulProgramy.Programy
 
         public void Ukoncit()
         {
-            throw new NotImplementedException();
+            PriUkonceniProgramu?.Invoke(this, EventArgs.Empty);
         }
     }
 }

@@ -24,5 +24,10 @@ namespace StulProgramy.Programy
         {
             InitializeComponent();
         }
+
+        private void VygenerovatNove(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
