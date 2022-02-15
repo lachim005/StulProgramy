@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StulProgramy"
         mc:Ignorable="d"
-        Title="ZobrazeniStolu" Height="600" Width="900" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
+        Title="Aktuální stav stolu" Height="600" Width="900" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
     <Grid>
         <Canvas x:Name="svetlaCanvas" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
     </Grid>

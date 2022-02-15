@@ -21,9 +21,24 @@ namespace StulProgramy
     /// </summary>
     public partial class MainWindow : Window
     {
+        ZobrazeniStolu? zs;
+
+        Stul? stul;
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void StulPripojen(object sender, EventArgs e)
+        {
+            pripojeniStoluDialog.Visibility = Visibility.Hidden;
+            stul = pripojeniStoluDialog.stul;
+            if (stul is not null)
+            {
+                zs = new ZobrazeniStolu(stul);
+                zs.Show();
+            }
         }
     }
 }

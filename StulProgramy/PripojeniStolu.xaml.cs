@@ -56,7 +56,6 @@ namespace StulProgramy
             try
             {
                 stul = new(port, 5000);
-                StulPripojen?.Invoke(this, EventArgs.Empty);
             } catch (Exception ex)
             {
                 if (ex is TimeoutException)
