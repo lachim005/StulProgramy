@@ -11,7 +11,7 @@ namespace StulProgramy
     /// <summary>
     /// Interface pro všechny programy na stůl
     /// </summary>
-    internal interface IProgram
+    public interface IProgram
     {
         /// <summary>
         /// Vizuální zobrazení a ovládání programu
