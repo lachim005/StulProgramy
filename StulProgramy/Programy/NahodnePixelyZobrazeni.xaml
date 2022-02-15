@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:StulProgramy.Programy"
+             xmlns:root="clr-namespace:StulProgramy"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
@@ -14,13 +15,37 @@
         <StackPanel Margin="10">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="150"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
                 <Label Content="_Počet pixelů" VerticalAlignment="Center" FontWeight="Bold" Target="{Binding ElementName=pixelySlider}"/>
                 <Slider Grid.Column="1" Value="10" VerticalAlignment="Center" x:Name="pixelySlider" IsSnapToTickEnabled="True" Minimum="1" Maximum="36"/>
                 <TextBlock Grid.Column="2" VerticalAlignment="Center" Width="40" TextAlignment="Center" Text="{Binding ElementName=pixelySlider, Path=Value}"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="_Barva nenalezeného" VerticalAlignment="Center" FontWeight="Bold" Target="{Binding ElementName=barvaNenalezenehoCbx}"/>
+                <root:StavComboBox Stav="Cervena" x:Name="barvaNenalezenehoCbx" Grid.Column="1" Height="21"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="_Barva nenalezeného" VerticalAlignment="Center" FontWeight="Bold" Target="{Binding ElementName=barvaNalezenehoCbx}"/>
+                <root:StavComboBox Stav="Zelena" x:Name="barvaNalezenehoCbx" Grid.Column="1" Height="21"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="_Barva nenalezeného" VerticalAlignment="Center" FontWeight="Bold" Target="{Binding ElementName=barvaZadnehoCbx}"/>
+                <root:StavComboBox x:Name="barvaZadnehoCbx" Grid.Column="1" Height="21"/>
             </Grid>
         </StackPanel>
         <Grid Grid.Column="1">

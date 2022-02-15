@@ -21,7 +21,7 @@ namespace StulProgramy
     /// </summary>
     public partial class StavComboBox : UserControl
     {
-        StavPixelu Stav
+        public StavPixelu Stav
         {
             get
             {

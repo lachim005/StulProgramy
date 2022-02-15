@@ -24,9 +24,9 @@ namespace StulProgramy.Programy
         private Action vygenerovatNove;
 
         public int PocetPixelu { get => (int)pixelySlider.Value; }
-        public StavPixelu BarvaZadna { get => StavPixelu.Zadny; }
-        public StavPixelu BarvaNenalezena { get => StavPixelu.Cervena; }
-        public StavPixelu BarvaNalezena { get => StavPixelu.Zelena; }
+        public StavPixelu BarvaZadna { get => barvaZadnehoCbx.Stav; }
+        public StavPixelu BarvaNenalezena { get => barvaNenalezenehoCbx.Stav; }
+        public StavPixelu BarvaNalezena { get => barvaNalezenehoCbx.Stav; }
 
         public NahodnePixelyZobrazeni(Action vygenerovatNove)
         {
