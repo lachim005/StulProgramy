@@ -1,4 +1,5 @@
 ﻿using StulKnihovna;
+using StulProgramy.Programy;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,7 +41,11 @@ namespace StulProgramy
         {
             ProgramData pd;
 
-            
+            pd = new();
+            pd.Nazev = "Náhodné pixely";
+            pd.Popis = "Program vygeneruje náhodné pixely, které musí být nalezeny a označeny magnetem";
+            pd.Vytvorit = (s) => new NahodnePixely(s);
+            programy.Add(pd);
         }
 
         private void StulPripojen(object sender, EventArgs e)
