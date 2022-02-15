@@ -6,7 +6,20 @@
         xmlns:local="clr-namespace:StulProgramy"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <local:PripojeniStolu x:Name="pripojeniStoluDialog" StulPripojen="StulPripojen"/>
+    <Grid x:Name="mainGrid">
+        <Grid x:Name="dialogyGrid">
+            <local:PripojeniStolu x:Name="pripojeniStoluDialog" StulPripojen="StulPripojen"/>
+        </Grid>
+        <Grid x:Name="programyGrid" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="VYBERTE PROGRAM" VerticalAlignment="Center" FontSize="30" FontWeight="Bold" TextAlignment="Center" Foreground="#555"/>
+            <ScrollViewer Grid.RowSpan="2" Grid.Row="1">
+                <StackPanel x:Name="programyStackpanel">
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
     </Grid>
 </Window>
