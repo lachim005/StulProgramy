@@ -32,7 +32,7 @@ namespace StulProgramy
         /// <summary>
         /// Event, který se zavolá po ukončení programu a uvolnění stolu
         /// </summary>
-        public event EventHandler PriUkonceniProgramu;
+        public event EventHandler? PriUkonceniProgramu;
         /// <summary>
         /// Ukončí program a uvolní stůl
         /// </summary>
