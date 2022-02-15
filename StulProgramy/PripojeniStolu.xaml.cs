@@ -65,7 +65,15 @@ namespace StulProgramy
                 }
                 stul = null;
             }
-
+            if (stul is not null)
+            {
+                header.Text = "Stůl připojen";
+                obnovitBtn.Visibility = Visibility.Hidden;
+                otestovatPripojeniBtn.Visibility = Visibility.Hidden;
+                portyLb.Visibility = Visibility.Hidden;
+                portyLabel.Visibility = Visibility.Hidden;
+                StulPripojen?.Invoke(this, EventArgs.Empty);
+            }
         }
 
         private void Obnovit(object sender, RoutedEventArgs e)
