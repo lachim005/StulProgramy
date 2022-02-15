@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StulKnihovna;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,14 +21,31 @@ namespace StulProgramy.Programy
     /// </summary>
     public partial class NahodnePixelyZobrazeni : UserControl
     {
-        public NahodnePixelyZobrazeni()
+        private Action vygenerovatNove;
+
+        public int PocetPixelu { get => (int)pixelySlider.Value; }
+        public StavPixelu BarvaZadna { get => StavPixelu.Zadny; }
+        public StavPixelu BarvaNenalezena { get => StavPixelu.Cervena; }
+        public StavPixelu BarvaNalezena { get => StavPixelu.Zelena; }
+
+        public NahodnePixelyZobrazeni(Action vygenerovatNove)
         {
             InitializeComponent();
+            this.vygenerovatNove = vygenerovatNove;
+        }
+
+        public void ZobrazitStav(int pocet, int nalezeno)
+        {
+            nalezenoTb.Text = $"{nalezeno}/{pocet}";
+
+
+            progressBar.Maximum = pocet;
+            progressBar.Value = nalezeno;
         }
 
         private void VygenerovatNove(object sender, RoutedEventArgs e)
         {
-
+            vygenerovatNove.Invoke();
         }
     }
 }
