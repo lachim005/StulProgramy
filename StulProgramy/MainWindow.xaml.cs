@@ -24,12 +24,6 @@ namespace StulProgramy
         public MainWindow()
         {
             InitializeComponent();
-
-        }
-
-        private void Stul_MagnetEvent(object sender, MagnetEventArgs e)
-        {
-            
         }
     }
 }

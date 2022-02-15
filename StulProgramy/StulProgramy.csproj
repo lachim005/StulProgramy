@@ -8,8 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="StulKnihovna">
-      <HintPath>..\..\Stul\Stul\bin\Debug\StulKnihovna.dll</HintPath>
+    <PackageReference Include="System.IO.Ports" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="StulBezPripojeni">
+      <HintPath>..\..\StulBezPripojeni\StulBezPripojeni\bin\Debug\net6.0-windows\StulBezPripojeni.dll</HintPath>
     </Reference>
   </ItemGroup>
 
