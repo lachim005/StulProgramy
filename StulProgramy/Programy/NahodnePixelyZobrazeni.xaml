@@ -20,7 +20,7 @@
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
                 <Label Content="_Počet pixelů" VerticalAlignment="Center" FontWeight="Bold" Target="{Binding ElementName=pixelySlider}"/>
-                <Slider Grid.Column="1" Value="10" VerticalAlignment="Center" x:Name="pixelySlider" IsSnapToTickEnabled="True" Minimum="1" Maximum="36"/>
+                <Slider Grid.Column="1" Value="10" VerticalAlignment="Center" x:Name="pixelySlider" IsSnapToTickEnabled="True" Minimum="1" Maximum="54"/>
                 <TextBlock Grid.Column="2" VerticalAlignment="Center" Width="40" TextAlignment="Center" Text="{Binding ElementName=pixelySlider, Path=Value}"/>
             </Grid>
             <Grid>
@@ -36,7 +36,7 @@
                     <ColumnDefinition Width="150"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Label Content="_Barva nenalezeného" VerticalAlignment="Center" FontWeight="Bold" Target="{Binding ElementName=barvaNalezenehoCbx}"/>
+                <Label Content="_Barva nalezeného" VerticalAlignment="Center" FontWeight="Bold" Target="{Binding ElementName=barvaNalezenehoCbx}"/>
                 <root:StavComboBox Stav="Zelena" x:Name="barvaNalezenehoCbx" Grid.Column="1" Height="21"/>
             </Grid>
             <Grid>
@@ -44,7 +44,7 @@
                     <ColumnDefinition Width="150"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Label Content="_Barva nenalezeného" VerticalAlignment="Center" FontWeight="Bold" Target="{Binding ElementName=barvaZadnehoCbx}"/>
+                <Label Content="_Barva nevyužitého" VerticalAlignment="Center" FontWeight="Bold" Target="{Binding ElementName=barvaZadnehoCbx}"/>
                 <root:StavComboBox x:Name="barvaZadnehoCbx" Grid.Column="1" Height="21"/>
             </Grid>
         </StackPanel>
