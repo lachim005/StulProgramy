@@ -14,7 +14,7 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <TextBlock FontSize="40" x:Name="header" VerticalAlignment="Center" Text="PŘIPOJTE SE KE STOLU" Foreground="#555" FontWeight="Bold" TextAlignment="Center"/>
-        <Label Content="Vyberte _port" x:Name="portyLabel" Grid.Row="1" Target="{Binding ElementName=tst}"/>
+        <Label Content="Vyberte _port" x:Name="portyLabel" Grid.Row="1" Target="{Binding ElementName=portyLb}"/>
         <ListBox Grid.Row="2" x:Name="portyLb"/>
         <Button x:Name="otestovatPripojeniBtn" IsEnabled="{Binding ElementName=portyLb, Path=SelectedItems.Count}" Click="Vybrat" Grid.Row="3" Height="40" Width="200" Content="_Vybrat" HorizontalAlignment="Right"/>
         <Button x:Name="obnovitBtn" Click="Obnovit" Grid.Row="3" Height="40" Width="200" Content="_Obnovit" HorizontalAlignment="Left"/>
