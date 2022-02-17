@@ -43,26 +43,8 @@ namespace StulProgramy
 
             pd = new();
             pd.Nazev = "Náhodné pixely";
-            pd.Popis = "Program vygeneruje náhodné pixely, které musí být nalezeny a označeny magnetem";
             pd.Obrazek = "NahodnePixelyIkona.png";
-            pd.Vytvorit = (s) => new NahodnePixely(s);
-            programy.Add(pd);
-            pd = new();
-            pd.Nazev = "Náhodné pixely";
             pd.Popis = "Program vygeneruje náhodné pixely, které musí být nalezeny a označeny magnetem";
-            pd.Obrazek = "NahodnePixelyIkona.png";
-            pd.Vytvorit = (s) => new NahodnePixely(s);
-            programy.Add(pd);
-            pd = new();
-            pd.Nazev = "Náhodné pixely";
-            pd.Popis = "Program vygeneruje náhodné pixely, které musí být nalezeny a označeny magnetem";
-            pd.Obrazek = "NahodnePixelyIkona.png";
-            pd.Vytvorit = (s) => new NahodnePixely(s);
-            programy.Add(pd);
-            pd = new();
-            pd.Nazev = "Náhodné pixely";
-            pd.Popis = "Program vygeneruje náhodné pixely, které musí být nalezeny a označeny magnetem";
-            pd.Obrazek = "NahodnePixelyIkona.png";
             pd.Vytvorit = (s) => new NahodnePixely(s);
             programy.Add(pd);
         }
