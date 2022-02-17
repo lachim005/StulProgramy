@@ -1,5 +1,7 @@
 # StulProgramy
 Programy pro stůl na LEGO projekty
+
+Program pro prácí se stolem využívá knihovnu [Stul](https://github.com/lachim005/Stul)
 ## Programy
 - Náhodné pixely
 
