@@ -21,6 +21,10 @@ namespace StulProgramy
         /// </summary>
         public string Popis { get; set; }
         /// <summary>
+        /// Obrázek v seznamu programů
+        /// </summary>
+        public string Obrazek { get; set; }
+        /// <summary>
         /// Funkce, která vytvoří instanci programu
         /// </summary>
         public Func<Stul, IProgram> Vytvorit { get; set; }

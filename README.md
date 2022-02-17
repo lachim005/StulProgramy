@@ -4,9 +4,10 @@ Programy pro stůl na LEGO projekty
 - Náhodné pixely
 
 ## Přidávání programů
-Každý program musí obsahovat minimálně 2 soubory:
+Každý program musí obsahovat minimálně 3 soubory:
 - Třídu, která implementuje rozhraní [```IProgram```](StulProgramy/IProgram.cs)
 - ```UserConrol```, který bude zobrazen uživateli a umožnujě program nastavovat
+- Obrázek, který bude zobrazen v seznamu programů
 
 Příklad pro třídu implementující [```IProgram```](StulProgramy/IProgram.cs):
 ```csharp
@@ -35,6 +36,7 @@ Do metody přidejte následující kód:
 ```csharp
 pd = new();
 pd.Nazev = "Náhodné pixely";
+pd.Obrazek = "NahodnePixelyIkona.png";
 pd.Popis = "Program vygeneruje náhodné pixely, které musí být nalezeny a označeny magnetem";
 pd.Vytvorit = (s) => new NahodnePixely(s);
 programy.Add(pd);

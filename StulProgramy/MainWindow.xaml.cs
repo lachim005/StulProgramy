@@ -2,6 +2,7 @@
 using StulProgramy.Programy;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,8 +23,7 @@ namespace StulProgramy
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<ProgramData> programy = new();
-        List<Button> programButtony = new();
+        ObservableCollection<ProgramData> programy = new();
 
         ZobrazeniStolu? zs;
 
@@ -35,7 +35,7 @@ namespace StulProgramy
         {
             InitializeComponent();
             NaplnitProgramy();
-            ZobrazitProgramy();
+            programyIc.ItemsSource = programy;
         }
         private void NaplnitProgramy()
         {
@@ -44,6 +44,25 @@ namespace StulProgramy
             pd = new();
             pd.Nazev = "Náhodné pixely";
             pd.Popis = "Program vygeneruje náhodné pixely, které musí být nalezeny a označeny magnetem";
+            pd.Obrazek = "NahodnePixelyIkona.png";
+            pd.Vytvorit = (s) => new NahodnePixely(s);
+            programy.Add(pd);
+            pd = new();
+            pd.Nazev = "Náhodné pixely";
+            pd.Popis = "Program vygeneruje náhodné pixely, které musí být nalezeny a označeny magnetem";
+            pd.Obrazek = "NahodnePixelyIkona.png";
+            pd.Vytvorit = (s) => new NahodnePixely(s);
+            programy.Add(pd);
+            pd = new();
+            pd.Nazev = "Náhodné pixely";
+            pd.Popis = "Program vygeneruje náhodné pixely, které musí být nalezeny a označeny magnetem";
+            pd.Obrazek = "NahodnePixelyIkona.png";
+            pd.Vytvorit = (s) => new NahodnePixely(s);
+            programy.Add(pd);
+            pd = new();
+            pd.Nazev = "Náhodné pixely";
+            pd.Popis = "Program vygeneruje náhodné pixely, které musí být nalezeny a označeny magnetem";
+            pd.Obrazek = "NahodnePixelyIkona.png";
             pd.Vytvorit = (s) => new NahodnePixely(s);
             programy.Add(pd);
         }
@@ -64,56 +83,25 @@ namespace StulProgramy
 
 
         #region Zobrazení, výběr a spouštění programů
-        private void ZobrazitProgramy()
-        {
-            foreach (ProgramData prog in programy)
-            {
-                GroupBox gb = new();
-                gb.Header = prog.Nazev;
-                gb.Width = 250;
-                gb.Margin = new Thickness(10);
-                gb.Padding = new Thickness(5);
-                gb.HorizontalAlignment = HorizontalAlignment.Left;
-
-                StackPanel sp = new StackPanel();
-
-                sp.Children.Add(new TextBlock() { Text = prog.Popis, TextWrapping = TextWrapping.Wrap });
-
-                Button b = new Button() { Content = "Spustit"};
-                b.Click += ProgramClick;
-                programButtony.Add(b);
-                b.Margin = new Thickness(5);
-                sp.Children.Add(b);
-
-                gb.Content = sp;
-
-                programyStackpanel.Children.Add(gb);
-            }
-        }
-
         private void ProgramClick(object sender, RoutedEventArgs e)
         {
-            int programIndex = -1;
-
-            for (int i = 0; i < programButtony.Count; i++)
+            Button? b = sender as Button;
+            if (b is not null)
             {
-                if (programButtony[i].Equals(sender))
-                {
-                    programIndex = i;
-                }
-            }
-            if (programIndex != -1)
-            {
-                SpustitProgram(programy[programIndex]);
+                //Spustí program s názvem, jaký ma Tag tlačítka
+                SpustitProgram(programy.First((pd) => pd.Nazev == (string)b.Tag));
             }
         }
 
         private void SpustitProgram(ProgramData programData)
         {
-            programyGrid.Visibility = Visibility.Hidden;
-            dialogyGrid.Visibility = Visibility.Visible;
-            program = programData.Vytvorit(stul);
-            dialogyGrid.Children.Add(program.Zobrazeni);
+            if (stul is not null)
+            { 
+                programyGrid.Visibility = Visibility.Hidden;
+                dialogyGrid.Visibility = Visibility.Visible;
+                program = programData.Vytvorit(stul);
+                dialogyGrid.Children.Add(program.Zobrazeni);
+            }
         }
         #endregion
 

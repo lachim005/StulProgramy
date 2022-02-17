@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="NahodnePixelyIkona.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.IO.Ports" Version="6.0.0" />
   </ItemGroup>
 
@@ -15,6 +19,10 @@
     <Reference Include="StulBezPripojeni">
       <HintPath>..\..\StulBezPripojeni\StulBezPripojeni\bin\Debug\net6.0-windows\StulBezPripojeni.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="NahodnePixelyIkona.png" />
   </ItemGroup>
 
 </Project>
