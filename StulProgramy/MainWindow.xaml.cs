@@ -116,5 +116,12 @@ namespace StulProgramy
             dialogyGrid.Children.Add(program.Zobrazeni);
         }
         #endregion
+
+        private void WindowClosed(object sender, EventArgs e)
+        {
+            program?.Ukoncit();
+            zs?.Close();
+            stul?.Dispose();
+        }
     }
 }
