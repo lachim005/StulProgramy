@@ -36,11 +36,14 @@ namespace StulProgramy.Programy
 
         public void ZobrazitStav(int pocet, int nalezeno)
         {
-            nalezenoTb.Text = $"{nalezeno}/{pocet}";
+            Dispatcher.Invoke(() =>
+            {
+                nalezenoTb.Text = $"{nalezeno}/{pocet}";
 
 
-            progressBar.Maximum = pocet;
-            progressBar.Value = nalezeno;
+                progressBar.Maximum = pocet;
+                progressBar.Value = nalezeno;
+            });
         }
 
         private void VygenerovatNove(object sender, RoutedEventArgs e)

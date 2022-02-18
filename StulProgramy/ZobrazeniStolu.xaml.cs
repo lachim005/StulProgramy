@@ -65,7 +65,10 @@ namespace StulProgramy
 
         private void ZmenaPixelu(object sender, PixelEventArgs e)
         {
-            svetla[e.X, e.Y].Fill = new SolidColorBrush(barvy[e.Pixel.Stav]);
+            Dispatcher.Invoke(() =>
+            {
+                svetla[e.X, e.Y].Fill = new SolidColorBrush(barvy[e.Pixel.Stav]);
+            });
         }
     }
 }
