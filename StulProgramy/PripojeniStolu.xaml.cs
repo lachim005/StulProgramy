@@ -55,7 +55,7 @@ namespace StulProgramy
             //Připojí stůl, pokud to jde
             try
             {
-                stul = new(port, 5000);
+                stul = new(port, 1000);
             } catch (Exception ex)
             {
                 if (ex is TimeoutException)
