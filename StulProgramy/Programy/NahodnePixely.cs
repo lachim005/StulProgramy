@@ -101,6 +101,7 @@ namespace StulProgramy.Programy
         public void Ukoncit()
         {
             HraJede = false;
+            Stul.MagnetEvent -= MagnetEvent;
             PriUkonceniProgramu?.Invoke(this, EventArgs.Empty);
         }
     }
