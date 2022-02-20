@@ -53,14 +53,10 @@ namespace StulProgramy
         {
             pripojeniStoluDialog.Visibility = Visibility.Hidden;
             stul = pripojeniStoluDialog.stul;
-            if (stul is not null)
-            {
-                zs = new ZobrazeniStolu(stul);
-                zs.Show();
-            }
             pripojeniStoluDialog.Visibility = Visibility.Hidden;
             dialogyGrid.Visibility = Visibility.Hidden;
             programyGrid.Visibility = Visibility.Visible;
+            sbZobrazitStulBtn.IsEnabled = true;
         }
 
 
@@ -78,11 +74,14 @@ namespace StulProgramy
         private void SpustitProgram(ProgramData programData)
         {
             if (stul is not null)
-            { 
+            {
+                stul.NastavVsechnyPixely(StavPixelu.Zadny);
                 programyGrid.Visibility = Visibility.Hidden;
                 dialogyGrid.Visibility = Visibility.Visible;
                 program = programData.Vytvorit(stul);
                 dialogyGrid.Children.Add(program.Zobrazeni);
+                sbUkoncitProgramBtn.IsEnabled = true;
+                sbNazevProgramu.Text = programData.Nazev;
             }
         }
         #endregion
@@ -92,6 +91,38 @@ namespace StulProgramy
             program?.Ukoncit();
             zs?.Close();
             stul?.Dispose();
+        }
+
+        private void UkoncitProgram(object sender, RoutedEventArgs e)
+        {
+            if (program is null)
+            {
+                return;
+            }
+            program.Ukoncit();
+            programyGrid.Visibility = Visibility.Visible;
+            dialogyGrid.Visibility = Visibility.Hidden;
+            dialogyGrid.Children.Remove(program.Zobrazeni);
+            program = null;
+            sbNazevProgramu.Text = "Žádný program";
+            sbUkoncitProgramBtn.IsEnabled = false;
+        }
+
+        private void ZobrazitStul(object sender, RoutedEventArgs e)
+        {
+            if (zs is null)
+            {
+                if (stul is null)
+                {
+                    return;
+                }
+            }
+            else if (zs.IsVisible)
+            {
+                return;
+            }
+            zs = new ZobrazeniStolu(stul);
+            zs.Show();
         }
     }
 }

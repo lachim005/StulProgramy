@@ -82,6 +82,10 @@ namespace StulProgramy.Programy
 
         private void MagnetEvent(object sender, PixelEventArgs e)
         {
+            if (!HraJede)
+            {
+                return;
+            }
             //Pokud má pixel stav nenalezeno, změní na nalezeno
             if (stavy[e.X, e.Y] == 1)
             {

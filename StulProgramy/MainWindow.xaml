@@ -6,8 +6,12 @@
         xmlns:local="clr-namespace:StulProgramy"
         mc:Ignorable="d"
         Closed="WindowClosed"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Stůl programy" Height="450" Width="800">
     <Grid x:Name="mainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
         <Grid x:Name="dialogyGrid">
             <local:PripojeniStolu x:Name="pripojeniStoluDialog" StulPripojen="StulPripojen"/>
         </Grid>
@@ -43,5 +47,34 @@
                 </ItemsControl>
             </ScrollViewer>
         </Grid>
+        <StatusBar Grid.Row="1">
+            <StatusBar.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="200" />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </StatusBar.ItemsPanel>
+            <StatusBarItem>
+                <TextBlock Text="Žádný program" x:Name="sbNazevProgramu"/>
+            </StatusBarItem>
+            <Separator Grid.Column="1" />
+            <StatusBarItem Grid.Column="2" Padding="0">
+                <Button x:Name="sbUkoncitProgramBtn" BorderThickness="0" Background="Transparent" IsEnabled="False" Click="UkoncitProgram" Content="Ukončit program" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="24" Width="100"/>
+            </StatusBarItem>
+            <Separator Grid.Column="3" />
+            <Separator Grid.Column="5" />
+            <StatusBarItem Grid.Column="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Padding="0">
+                <Button x:Name="sbZobrazitStulBtn" BorderThickness="0" Background="Transparent" IsEnabled="False" Click="ZobrazitStul" Content="Zobrazit aktuální stav stolu" Height="24" Width="200"/>
+            </StatusBarItem>
+        </StatusBar>
     </Grid>
 </Window>
