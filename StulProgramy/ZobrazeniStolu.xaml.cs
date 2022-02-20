@@ -22,8 +22,8 @@ namespace StulProgramy
     {
         private Ellipse[,] svetla;
 
-        const int velikostPole = 100;
-        const int velikostSvetla = 30;
+        const int velikostPole = 50;
+        const int velikostSvetla = 26;
 
         private Dictionary<StavPixelu, Color> barvy = new Dictionary<StavPixelu, Color>(3);
 
